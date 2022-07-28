@@ -9,7 +9,7 @@ import "./styles/app.scss";
 //import util
 import data from "./data";
 
-function App() {
+const App = () => {
   //Ref
   const audioRef = useRef(null);
   //State
@@ -44,7 +44,7 @@ function App() {
   };
 
   return (
-    <div className="App">
+    <div className={`App ${libraryStatus ? "library-active" : ""}`}>
       <Nav libraryStatus={libraryStatus} setLibraryStatus={setLibraryStatus} />
       <Song currentSong={currentSong} />
       <Player
@@ -75,6 +75,6 @@ function App() {
       ></audio>
     </div>
   );
-}
+};
 
 export default App;
